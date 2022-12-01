@@ -3,10 +3,10 @@ import { Memo } from './memo';
 
 export const MySQLSource = new DataSource({
     type: 'mysql',
-    host: 'db',
+    host: 'localhost',
     port: 3307,
-    username: process.env.USERNAME || 'root',
-    password: process.env.PASSWORD || 'root',
+    username: 'root',
+    password: 'root',
     database: 'intranet',
     synchronize: true,
     logging: false,
