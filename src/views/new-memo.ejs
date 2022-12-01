@@ -1,0 +1,31 @@
+<%- include('base-header') -%>
+<form action="memo-added" method="post">
+    <ul>
+        <li>
+            <p>Title:</p>
+            <input
+                class="text-field"
+                type="text"
+                name="title"
+                placeholder="Memo Title"
+            />
+        </li>
+        <li>
+            <p>Description:</p>
+            <input
+                class="text-field"
+                type="text"
+                name="descr"
+                placeholder="Memo Description"
+            />
+        </li>
+        <li>
+            <input
+                class="submit"
+                type="submit"
+                value="Save"
+            />
+        </li>
+    </ul>
+</form>
+<%- include('base-footer') -%>

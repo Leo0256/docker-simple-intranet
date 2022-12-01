@@ -21,10 +21,29 @@ var service = new Service();
 service.start();
 
 app.use(express.static('src/public'));
-app.get('/', (req: Request, res: Response) => {
-    return res.json({
-        message: 'ok'
-    });
-});
+app.get('/', renderJournalHandler);
+app.get('/new-memo', renderNewMemoHandler);
+app.post('/memo-added', addNewMemoHandler);
 
 app.listen(port, () => console.log('Listening on port: ', port));
+
+
+//
+async function renderJournalHandler(_: any, res: Response) {
+    const memoList = await service.getMemos();
+    res.render('journal.ejs', { memoList });
+}
+
+function renderNewMemoHandler(_: any, res: Response) {
+    res.render('new-memo.ejs');
+}
+
+function addNewMemoHandler(req: Request, res: Response) {
+    const newMemo = new Memo();
+    const data = req.body;
+
+    newMemo.title = data.title;
+    newMemo.descr = data.descr;
+    service.newMemo(newMemo);
+    res.render('memo-added.ejs', { newMemo });
+}

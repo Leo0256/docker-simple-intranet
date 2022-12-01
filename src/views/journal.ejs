@@ -1,0 +1,10 @@
+<%- include('base-header') -%>
+<ul>
+    <% for(let i = 0; i < memoList.length; i++) { %>
+        <li>
+            <p>Title: <%= memoList[i].title %></p>
+            <p>Title: <%= memoList[i].descr %></p>
+        </li>
+    <% } %>
+</ul>
+<%- include('base-footer') -%>
