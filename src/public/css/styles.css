@@ -13,3 +13,67 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    cursor: pointer;
+    color: black;
+}
+
+hr {
+    border: 1px solid black;
+    background-color: black;
+    margin-block-end: 1vh;
+}
+
+nav.navbar {
+    display: flex;
+    justify-content: space-between;
+    position: sticky;
+    background-color: darkgrey;
+    padding-block: 1.5vh;
+    padding-inline: 1vw;
+}
+
+ul {
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+}
+
+nav.navbar ul {
+    flex-direction: row;
+}
+
+nav.navbar li {
+    margin-inline: 1vw;
+}
+
+nav.navbar + * {
+    margin: 1em
+}
+
+p.title {
+    font-size: larger;
+    font-weight: bold;
+}
+
+.card {
+    border: 1px solid black;
+    border-radius: 5pt;
+    margin-block-end: 1vh;
+    padding-inline: 1vw;
+    padding-block: 2vh;
+}
+
+form, #add-memo {
+    display: flex;
+    justify-content: center;
+}
+
+#add-memo {
+    flex-direction: column;
+}

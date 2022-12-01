@@ -2,8 +2,11 @@
 <ul>
     <% for(let i = 0; i < memoList.length; i++) { %>
         <li>
-            <p>Title: <%= memoList[i].title %></p>
-            <p>Title: <%= memoList[i].descr %></p>
+            <div class="card">
+                <p>#<%= memoList[i].id %></p>
+                <p>Title: <%= memoList[i].title %></p>
+                <p>Description: <%= memoList[i].descr %></p>
+            </div>
         </li>
     <% } %>
 </ul>
